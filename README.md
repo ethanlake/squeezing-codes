@@ -63,25 +63,6 @@ julia --project=. simulation_driver.jl --mode=coarsening --rule=R --L=48 --p=0.0
 One MC sweep is `L²` asynchronous site updates, and all times (`t_auto`,
 `t_rel`, …) are reported in units of sweeps.
 
-**Two distinct timescales.** This repo carefully distinguishes:
-
-- `t_auto` — the *magnetization autocorrelation time*: the exponential
-  decay time of the connected autocorrelation function of `|m|`,
-  measured in equilibrium (stats mode). Written as
-  `t_auto_<obs>` and exposed in the plotter as `--plot t_autos`.
-- `t_rel` — the *first-passage / relaxation time*: starting from a clean
-  initial state aligned against the noise bias, the time for the
-  magnetization to first cross zero (trel mode). Written to disk as
-  `t_rel`, `t_rel_err`, … and exposed in the plotter as
-  `--plot t_rels`.
-
-Both scale as `τ ~ L^z` near criticality and share the same
-`τ → L^z / τ` collapse, but they are physically distinct measurements
-on different runs; the names are kept separate everywhere. Output is written as `data/{rule}_{mode}{specifier}.jld2`,
-where the specifier is built only from parameters that were explicitly set
-on the command line; existing files are never overwritten (`_1`, `_2`, …
-are appended on collision).
-
 ### Modes
 
 - **`stats`** — long Monte Carlo runs measuring `⟨|m|⟩`, `χ`, the normalized Binder cumulant of `|m|`, the magnetization autocorrelation time, and (optionally) spatial / temporal correlators for every observable. p-sweep at fixed L (default) or L-sweep at fixed p (`--vary_L=true`).
