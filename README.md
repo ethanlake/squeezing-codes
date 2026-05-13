@@ -1,6 +1,6 @@
 # squeezing-criticality
 
-Code companion to [*Squeezing codes: robust fluctuation-stabilized memories*](https://arxiv.org/abs/2509.20730) by myself and Sunghan Ro. This repository contains everything needed to reproduce the critical-point and dynamical-exponent results in that paper: a Julia Monte Carlo simulator for the squeezing rules R, F, M (plus Toom's rule and zero-temperature Glauber as baselines), a Python finite-size-scaling pipeline with bootstrap uncertainty quantification, and the raw data and figures used in the paper.
+Code companion to [*Squeezing codes: robust fluctuation-stabilized memories*](https://arxiv.org/abs/2509.20730) by myself and Sunghan Ro. This repository contains everything needed to reproduce the numerical results in that paper: a Julia Monte Carlo simulator for the squeezing rules R, F, M (plus Toom's rule and zero-temperature Glauber as baselines), a Python finite-size-scaling pipeline with bootstrap uncertainty quantification, and the raw data and figures used in Sec. VI of the paper.
 
 The simulator runs on a square torus with i.i.d. bit-flip noise at rate `p`. It sweeps `p` (and optionally `L`), and records moments and correlators of the magnetization `m` and an anisotropy observable `D`. The Python plotter performs interactive and automated FSS collapses to extract `(p_c, ν, β, γ, z)` with statistical and systematic error budgets.
 
