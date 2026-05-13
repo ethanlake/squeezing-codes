@@ -1,0 +1,50 @@
+# Track only the data files referenced by reproducing_paper_plots.md;
+# all other simulation outputs in data/ stay ignored. To add a new
+# data file to the published set: add a command referencing it to
+# reproducing_paper_plots.md, then add a corresponding `!data/<file>`
+# line below. The full list can be regenerated via:
+#   grep -oE 'data/[^ ]+\.jld2' reproducing_paper_plots.md | sort -u
+data/*
+
+# referenced from reproducing_paper_plots.md:
+!data/F_quench_L128_n_samples25000_T2900_p0.01165_bind_pc.jld2
+!data/F_quench_L192_n_samples15000_T4000_p0.01165_bind_pc.jld2
+!data/F_quench_L48_n_samples25000_T1350_p0.01165_bind_pc.jld2
+!data/F_quench_L64_n_samples25000_T1800_p0.01165_bind_pc.jld2
+!data/F_quench_L96_n_samples25000_T2250_p0.01165_bind_pc.jld2
+!data/F_stats_L128_p0.009414to0.01389_n_ps15_n_samples5_data_steps1300000_therm5000_f_rerun5x.jld2
+!data/F_stats_L192_p0.009787to0.01351_n_ps15_n_samples5_data_steps900000_therm5000_f_rerun5x.jld2
+!data/F_stats_L48_p0.008173to0.01513_n_ps15_n_samples5_data_steps1100000_therm5000_f_rerun5x.jld2
+!data/F_stats_L64_p0.008595to0.0147_n_ps15_n_samples5_data_steps1300000_therm5000_f_rerun5x.jld2
+!data/F_stats_L96_p0.009105to0.0142_n_ps15_n_samples5_data_steps1300000_therm5000_f_rerun5x.jld2
+!data/M_quench_L128_n_samples15000_T5100_p0.003286_bind_pc.jld2
+!data/M_quench_L192_n_samples15000_T6900_p0.003286_bind_pc.jld2
+!data/M_quench_L48_n_samples50000_T1700_p0.003286_bind_pc.jld2
+!data/M_quench_L64_n_samples50000_T2500_p0.003286_bind_pc.jld2
+!data/M_quench_L96_n_samples50000_T3400_p0.003286_bind_pc.jld2
+!data/M_stats_L128_p0.002258to0.004142_n_ps15_n_samples5_data_steps3000000_therm5000_m_rerun5x.jld2
+!data/M_stats_L192_p0.002415to0.003985_n_ps15_n_samples5_data_steps1000000_therm5000_m_rerun5x.jld2
+!data/M_stats_L48_p0.001736to0.004664_n_ps15_n_samples5_data_steps3000000_therm5000_m_rerun5x.jld2
+!data/M_stats_L64_p0.001914to0.004486_n_ps15_n_samples5_data_steps3000000_therm5000_m_rerun5x.jld2
+!data/M_stats_L96_p0.002128to0.004272_n_ps15_n_samples5_data_steps3000000_therm5000_m_rerun5x.jld2
+!data/R_quench_L128_n_samples50000_T5500_p0.03828_bind_pc.jld2
+!data/R_quench_L196_n_samples50000_T7500_p0.03828_bind_pc.jld2
+!data/R_quench_L48_n_samples25000_T1500_p0.03828_bind_pc.jld2
+!data/R_quench_L64_n_samples50000_T2500_p0.03828_bind_pc.jld2
+!data/R_quench_L96_n_samples50000_T4000_p0.03828_bind_pc.jld2
+!data/R_stats_L128_p0.03497to0.04203_n_ps15_n_samples5_data_steps900000_therm5000_r2rerun5x.jld2
+!data/R_stats_L192_p0.03616to0.04204_n_ps15_n_samples5_data_steps1000000_therm5000_r2rerun5x.jld2
+!data/R_stats_L48_p0.03219to0.04481_n_ps15_n_samples5_data_steps500000_therm5000_r2rerun5x.jld2
+!data/R_stats_L64_p0.03263to0.04437_n_ps15_n_samples5_data_steps500000_therm5000_r2rerun5x.jld2
+!data/R_stats_L96_p0.03448to0.04252_n_ps15_n_samples5_data_steps900000_therm5000_r2rerun5x.jld2
+!data/ca_fsqz_h_quench_L300_p0.01165_eta0.0_alpha0.0.jld2
+!data/sqztest_quench_msqz_h_300_0.0032875.jld2
+!data/sqztest_quench_rsqz_h_300_0.038425.jld2
+!data/sqztest_quench_toom_300_0.13395.jld2
+!data/sqztest_quench_zeroT_glauber_300_0.141294.jld2
+
+# build / editor / system noise
+__pycache__/
+*.pyc
+.DS_Store
+logs/

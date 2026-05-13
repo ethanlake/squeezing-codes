@@ -1,0 +1,16 @@
+name = "SqueezingCriticality"
+uuid = "e104a4d6-91ee-4304-a1e1-6d696251b62f"
+version = "0.1.0"
+
+[deps]
+InteractiveUtils = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
+JLD2             = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
+LinearAlgebra    = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Printf           = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+ProgressMeter    = "92933f4c-e287-5a05-a399-4b506db050ca"
+Random           = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Statistics       = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+
+[compat]
+JLD2          = "0.6"
+ProgressMeter = "1"

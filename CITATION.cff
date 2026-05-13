@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the companion paper below."
+title: "squeezing-criticality: critical-point analysis of the squeezing rules R, F, M"
+abstract: >
+  Code companion to Lake & Ro, "Squeezing codes: robust fluctuation-stabilized
+  memories" (arXiv:2509.20730). Contains a Julia Monte Carlo simulator for
+  the squeezing rules R, F, M (plus Toom's rule and zero-temperature Glauber
+  baselines) on a square torus, a Python finite-size-scaling pipeline with
+  bootstrap and leave-one-L-out uncertainty quantification, and the raw
+  data and figures used in the paper.
+authors:
+  - family-names: Lake
+    given-names: Ethan
+  - family-names: Ro
+    given-names: Sunghan
+license: MIT
+repository-code: "https://github.com/elake/squeezing-criticality"
+preferred-citation:
+  type: article
+  title: "Squeezing codes: robust fluctuation-stabilized memories"
+  authors:
+    - family-names: Lake
+      given-names: Ethan
+    - family-names: Ro
+      given-names: Sunghan
+  year: 2025
+  url: "https://arxiv.org/abs/2509.20730"
+  identifiers:
+    - type: other
+      value: "arXiv:2509.20730"
