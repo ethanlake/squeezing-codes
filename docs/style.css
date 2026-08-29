@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Charter', 'Georgia', 'Times', serif;
+    background: #fafafa;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background: linear-gradient(135deg, rgba(191, 222, 234, 0.4) 0%, rgba(121, 151, 128, 0.4) 100%);
+    /*background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);*/
+    /*background: #f8f9fa;*/
+    color: black;
+    /*padding: 40px 60px;*/
+    text-align: center;
+    /*border-bottom: 4px solid #e74c3c;*/
+    border-bottom: 4px solid #414145;
+    padding-top: 50px;
+    padding-bottom: 0px;
+}
+
+.header h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.header p {
+    opacity: 0.9;
+    font-size: 1.3em;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.demo-section {
+    padding: 60px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.main-content {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.canvas-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.canvas-container {
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 0px;
+    overflow: hidden;
+    /*box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);*/
+    background: white;
+}
+
+#c {
+    display: block;
+    border-radius: 0px;
+}
+
+.canvas-controls {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: min-content min-content;
+    gap: 0px 5px;
+    text-align: center;
+    line-height: 1.4em;
+    max-width: 600px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.btn-primary {
+    background: steelblue;
+    color: white;
+}
+
+.btn-secondary {
+    background: #95a5a6;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background: steelblue;
+}
+
+.btn-secondary:hover {
+    background: #7f8c8d;
+}
+
+.controls-section {
+    width: 380px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group h3 {
+    font-size: 1.2em;
+    margin-bottom: 18px;
+    color: #2c3e50;
+    font-weight: 600;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.control-item {
+    margin-bottom: 15px;
+}
+
+.control-item label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #34495e;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.slider-container {
+    position: relative;
+}
+
+.slider {
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.15);
+    outline: none;
+    -webkit-appearance: none;
+    margin-bottom: 0px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: steelblue;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+    transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    background: steelblue;
+}
+
+.slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: steelblue;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+.slider-value {
+    text-align: right;
+    font-size: 14px;
+    color: #7f8c8d;
+    font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+}
+
+.select-container {
+    position: relative;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.custom-select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.custom-checkbox {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background: #bdc3c7;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-checkbox.checked {
+    background: #3498db;
+}
+
+.custom-checkbox::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-checkbox.checked::after {
+    transform: translateX(24px);
+}
+
+.rule-input-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+}
+
+.rule-input-section h4 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-field {
+    flex: 1;
+    padding: 10px 12px;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.input-field:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.input-field.code-input {
+    font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+    font-size: 12px;
+}
+
+.rule-visualizer {
+    position: relative;
+    width: 100%;
+    max-width: 605px;
+    height: 301px;
+    /*border-radius: 8px;*/
+    /*overflow: hidden;*/
+    /*box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);*/
+    background: white;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.rule-visualizer canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*border-radius: 8px;*/
+}
+
+.current-rule-display {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 2px;
+    padding: 10px;
+    font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+    font-size: 12px;
+    word-break: break-all;
+    height: auto;
+    overflow-y: scroll;
+    line-height: 1.4;
+    color: #2c3e50;
+    margin-top: 15px;
+    max-width: 600px;
+}
+
+/* Article Section */
+.article-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px;
+    background: white;
+    font-family: 'Charter', 'Georgia', 'Times', serif;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+/* Ensure all markdown content uses the correct fonts */
+.article-section *,
+#article-content *,
+#article-content {
+    font-family: inherit;
+}
+
+.article-section h1,
+.article-section h2,
+.article-section h3,
+#article-content h1,
+#article-content h2,
+#article-content h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.article-section h1,
+#article-content h1 {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-top: 0;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+}
+
+.article-section h2,
+#article-content h2 {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #34495e;
+}
+
+.article-section h3,
+#article-content h3 {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #34495e;
+}
+
+.article-section p,
+#article-content p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    text-align: justify;
+    font-family: 'Charter', 'Georgia', 'Times', serif !important;
+    line-height: 1.6;
+}
+
+.article-section ul,
+.article-section ol,
+#article-content ul,
+#article-content ol {
+    margin-bottom: 20px;
+    padding-left: 30px;
+    font-family: 'Charter', 'Georgia', 'Times', serif !important;
+}
+
+.article-section li,
+#article-content li {
+    margin-bottom: 8px;
+    font-size: 1.05em;
+    font-family: 'Charter', 'Georgia', 'Times', serif !important;
+}
+
+.article-section code,
+#article-content code {
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'SF Mono', 'Monaco', 'Menlo', monospace !important;
+    font-size: 0.9em;
+    color: #e74c3c;
+}
+
+.article-section pre,
+#article-content pre {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px 0;
+    overflow-x: auto;
+    font-family: 'SF Mono', 'Monaco', 'Menlo', monospace !important;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.article-section blockquote,
+#article-content blockquote {
+    border-left: 4px solid #3498db;
+    margin: 20px 0;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    font-style: italic;
+    color: #34495e;
+    font-family: 'Charter', 'Georgia', 'Times', serif !important;
+}
+
+.article-section a,
+#article-content a {
+    color: #3498db;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.article-section a:hover,
+#article-content a:hover {
+    border-bottom-color: #3498db;
+}
+
+.article-section .math {
+    font-family: 'Computer Modern', serif;
+    font-style: italic;
+}
+
+.article-section hr,
+#article-content hr {
+    border: none;
+    border-top: 1px solid #dee2e6;
+    margin: 40px 0;
+}
+
+.article-section em,
+#article-content em {
+    font-style: italic;
+    font-family: 'Charter', 'Georgia', 'Times', serif !important;
+}
+
+.article-section strong,
+#article-content strong {
+    font-weight: 600;
+    font-family: 'Charter', 'Georgia', 'Times', serif !important;
+}
+
+.footnote {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    border-top: 1px solid #dee2e6;
+    padding-top: 30px;
+    margin-top: 60px;
+    font-family: 'Charter', 'Georgia', 'Times', serif !important;
+    font-style: italic;
+}
+
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .controls-section {
+        width: 100%;
+    }
+
+    .demo-section {
+        padding: 40px 30px;
+    }
+
+    .article-section {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 30px 20px;
+    }
+
+    .header h1 {
+        font-size: 2.2em;
+    }
+
+    .demo-section {
+        padding: 30px 20px;
+    }
+
+    .article-section {
+        padding: 30px 20px;
+    }
+
+    .article-section h1 {
+        font-size: 1.8em;
+    }
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    background: steelblue;
+    fill: white;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.button-group {
+    border-radius: 4px;
+    padding: 4px;
+    background: #eee;
+}
+
+.button-group input {
+    display: none;
+}
+
+.button-group img {
+    cursor: pointer;
+    border: 0px solid white;
+}
+
+.button-group input:checked + img {
+    border: 2px solid goldenrod;
+}
+
+.demo-tip {
+    display: grid;
+    grid-template-columns: 40px auto;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 20px;
+}
+
+#blog {
+    margin: 2rem auto;
+    max-width: 800px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.MathJax {
+    font-size: 1.1em !important;
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Squeezing codes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="playIcon" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"></path>
+        <path d="M0 0h24v24H0z" fill="none"></path>
+    </symbol>
+    <symbol id="pauseIcon" viewBox="0 0 24 24">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+        <path d="M0 0h24v24H0z" fill="none"></path>
+    </symbol>
+    <symbol id="resetIcon" viewBox="0 0 24 24">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"></path>
+    </symbol>
+    <symbol id="zoomInIcon" viewBox="0 0 24 24">
+        <path d="M0 0h24v24H0V0z" fill="none"/>
+        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        <path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/>
+    </symbol>
+
+    <div class="container">
+        <div class="header">
+            <h1>Squeezing codes</h1>
+            <p></p>
+        </div>
+
+        <div class="demo-section">
+            <div class="main-content">
+
+                <div class="canvas-section">
+                    <div class="demo-tip">
+                        <img id="pointer" src="images/pointer.svg" width="40px" height="40px"/>
+                        <div class="hint ">
+                            Click or tap to change the state of the CA with the brush.
+                        </div>
+                    </div>
+                    <div class="canvas-container">
+                        <canvas id="c" width="600" height="600"></canvas>
+                    </div>
+
+                    <div class="canvas-controls">
+                        <div style="text-align: left;">
+                        <span id="play-pause">
+                          <svg class="icon" id="play" style="display: none;"><use xlink:href="#playIcon"></use></svg>
+                          <svg class="icon" id="pause"><use xlink:href="#pauseIcon"></use></svg>
+                        </span>
+                            <svg class="icon" id="reset_state">
+                                <use xlink:href="#resetIcon"></use>
+                            </svg>
+                        </div>
+
+                        <div>
+                            <div class="slider-container" style="">
+                                <input type="range" id="spf" class="slider" min="-4" max="4" value="-1">
+                                <label>Steps/Frame: </label> <label class="slider-value" id="spf-value">1/3x</label>
+                            </div>
+                        </div>
+
+                        <div id='brush-bit-select' class="button-group">
+                            <label>
+                                <input type="radio" name="brush-bit"><img src="images/0.png" width="34px"
+                                                                          height="34px"/>
+                            </label>
+                            <label>
+                                <input type="radio" name="brush-bit" checked="checked"><img src="images/1.png"
+                                                                                            width="34px"
+                                                                                            height="34px"/>
+                            </label>
+                            <label>
+                                <input type="radio" name="brush-bit"><img src="images/noise.png"
+                                                                          width="34px" height="34px"/>
+                            </label>
+                            <br> Brush Bit
+                        </div>
+
+                        <div>
+                            <div class="slider-container">
+
+                                <input type="range" id="noise-prob" class="slider" min="0" max="1" step="0.001"
+                                       value="0.01" style="margin-top:30px;">
+                                <input class="slider-value" id="noise-prob-input" type="number" min="0" max="1" style="width: 75px; text-align: center;" value="0.01">
+                                <label>Noise Probability ($p$): </label>
+                                <label class="slider-value" id="noise-prob-value">0.01</label>
+                            </div>
+                        </div>
+
+
+                        <div id='brush-size-select' class="button-group">
+                            <label>
+                                <input type="radio" name="brush-size"><img
+                                    src="images/brush_S.png" width="34px" height="34px"/>
+                            </label>
+                            <label>
+                                <input type="radio" name="brush-size" checked="checked"><img src="images/brush_M.png"
+                                                                                             width="34px"
+                                                                                             height="34px"/>
+                            </label>
+                            <label>
+                                <input type="radio" name="brush-size"><img
+                                    src="images/brush_L.png" width="34px" height="34px"/>
+                            </label>
+                            <br> Brush Size
+                        </div>
+
+                        <div>
+                            <div class="slider-container">
+                                <input type="range" id="noise-bias" class="slider" min="-1" max="1" step="0.001"
+                                       value="0.0" style="margin-top:20px;">
+                                <input class="slider-value" id="noise-bias-input" type="number" min="-1.0" max="1.0" style="width: 75px; text-align: center;" value="0.0">
+                                <label>Noise Bias ($\eta$): </label> <label class="slider-value"
+                                                                   id="noise-bias-value">0.0</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="controls-section">
+                    <div class="control-group">
+                        <h3>Simulation Parameters</h3>
+
+                        <div class="control-item">
+                            <label>Rule</label>
+                            <select id="rule-select" class="custom-select">
+                            </select>
+                        </div>
+
+                        <div class="control-item">
+                            <label>Rule Selection Probability</label>
+
+                            <div class="slider-container">
+                                <input class="slider-value" id="rule-prob-input" type="number" min="0.0" max="1.0" style="width: 75px; text-align: center;" value="0.5">
+                                <input type="range" id="rule-prob" class="slider" min="0.0" max="1" step="0.01"
+                                       value="0.5">
+                                <div class="slider-value" id="rule-prob-value">0.5</div>
+                            </div>
+                        </div>
+
+                        <div class="control-item">
+                            <label>Grid Size</label>
+                            <div class="slider-container">
+                                <input type="range" id="grid-size" class="slider" min="16" max="400" value="200">
+                                <div class="slider-value" id="grid-size-value">200</div>
+                            </div>
+                        </div>
+
+                        <div class="control-item">
+                            <label>Update Probability ($\alpha$)</label>
+                            <div class="slider-container">
+                                <input type="range" id="update-prob" class="slider" min="0.001" max="1" step="0.001"
+                                       value="0.25">
+                                <div class="slider-value" id="update-prob-value">0.25</div>
+                            </div>
+                        </div>
+
+
+                        <div class="control-group">
+                            <h3>Initial Condition</h3>
+
+                            <div id='init-bit-select' class="button-group"
+                                 style="background: transparent; text-align: center">
+                                <label>
+                                    <input type="radio" name="init-bit" checked="checked"><img
+                                        src="images/0.png" width="90px" height="90px"/>
+                                </label>
+                                <label>
+                                    <input type="radio" name="init-bit"><img src="images/1.png" width="90px"
+                                                                             height="90px"/>
+                                </label>
+                                <label>
+                                    <input type="radio" name="init-bit"><img
+                                        src="images/noise_hr.png" width="90px" height="90px"/>
+                                </label>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Section -->
+            <div class="article-section" id="article-content">
+
+            </div>
+
+
+        </div>
+        <script src="swissgl.js"></script>
+        <script src="ca.js"></script>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+
+
+        <script>
+            const blogMarkdown = `
+This is an interactive demo of the squeezing codes introduced in [arxiv:2509.20730](https://arxiv.org/abs/2509.20730). The design is based on [this demo](https://memorynca.github.io/2D/).
+        `;
+
+            // Configure marked options for better rendering
+            marked.setOptions({
+                breaks: false,
+                gfm: true,
+                headerIds: true,
+                headerPrefix: 'section-'
+            });
+
+            // Function to render markdown with math
+            function renderContent() {
+                const contentDiv = document.getElementById('article-content');
+
+                // First render the markdown
+                contentDiv.innerHTML = marked.parse(blogMarkdown);
+
+                // Then process the math with MathJax
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([contentDiv]).catch(function (err) {
+                        console.log('MathJax error:', err.message);
+                    });
+                }
+            }
+
+            // Wait for everything to load
+            document.addEventListener('DOMContentLoaded', function () {
+                // Small delay to ensure MathJax is ready
+                setTimeout(renderContent, 100);
+            });
+
+            // Also try when window loads as backup
+            window.addEventListener('load', function () {
+                setTimeout(renderContent, 200);
+            });
+
+        </script>
+</body>
+</html>
