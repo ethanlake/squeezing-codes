@@ -1,12 +1,12 @@
 # squeezing-criticality
 
-Code companion to [*Squeezing codes: robust fluctuation-stabilized memories*](https://arxiv.org/abs/2509.20730) by myself and Sunghan Ro. An interactive browser demo of the squeezing rules lives at [ethanlake.github.io/squeezing-codes](https://ethanlake.github.io/squeezing-codes/). This repository contains everything needed to reproduce the numerical results in that paper: a Julia Monte Carlo simulator for the squeezing rules R, F, M (plus Toom's rule and zero-temperature Glauber as baselines), a Python finite-size-scaling pipeline with bootstrap uncertainty quantification, and the raw data and figures used in Sec. VI of the paper.
+Code companion to [*Squeezing codes: robust fluctuation-stabilized memories*](https://arxiv.org/abs/2509.20730) by Ethan Lake and Sunghan Ro. An interactive browser demo of the squeezing rules can be found at [ethanlake.github.io/squeezing-codes](https://ethanlake.github.io/squeezing-codes/). This repository contains everything needed to reproduce the numerical results in that paper: a Julia Monte Carlo simulator for analyzing the dynamics, critical properties, and memory lifetimes, a Python finite-size-scaling pipeline with bootstrap uncertainty quantification, and the raw data and figures used in Sec. VI of the paper.
 
 The simulator runs on a square torus with i.i.d. bit-flip noise at rate `p`. It sweeps `p` (and optionally `L`), and records moments and correlators of the magnetization `m` and an anisotropy observable `D`. The Python plotter performs interactive and automated FSS collapses to extract `(p_c, ν, β, γ, z)` with statistical and systematic error budgets.
 
 ## Citation
 
-If you use this code or data, please cite the paper. A machine-readable `CITATION.cff` is included; the BibTeX entry is:
+If you use this code or data, please cite the paper: 
 
 ```bibtex
 @article{lake2025squeezing,
