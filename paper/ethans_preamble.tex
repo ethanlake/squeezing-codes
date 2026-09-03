@@ -1,0 +1,601 @@
+
+\usepackage{graphicx}
+\usepackage[nointegrals]{wasysym} %
+\usepackage[export]{adjustbox}
+\usepackage{amsmath,amsfonts,amssymb,latexsym}
+\usepackage{hhline}
+\usepackage{bm}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\hyphenation{PYTHIA}
+\usepackage{mathrsfs}
+\usepackage{slashed}
+\usepackage{empheq}
+
+
+\renewcommand{\Re}{{\rm \, Re\,}}
+\renewcommand{\Im}{{\rm Im}}
+\newcommand{\ch}{\text{c}}
+\newcommand{\chc}{\text{ch}}
+\newcommand{\coker}{\text{coker\ }}
+\newcommand{\ind}{\text{ind\ }}
+\newcommand{\Tr}{\text{Tr}}
+\newcommand{\sTr}{\text{sTr}}
+\newcommand{\eee}{\text{End\,}}
+\newcommand{\End}{\text{End}}
+\newcommand{\Out}{\text{Out}}
+\newcommand{\Inn}{\text{Inn}}
+\newcommand{\Tor}{\text{Tor}}
+\newcommand{\Hom}{\text{Hom}}
+\renewcommand{\hom}{\text{Hom}}
+\newcommand{\Aut}{\text{Aut}}
+\newcommand{\pont}{{Pontryagin }}
+\newcommand{\Pf}{\text{Pf}}
+\newcommand{\spin}{\mathfrak{spin}}
+\newcommand{\pinst}{\text{Pin}(s,t)}
+\newcommand{\pin}{\mathfrak{pin}}
+\newcommand{\Rep}{\text{Rep}}
+\newcommand{\Pin}{\text{Pin}}
+\newcommand{\arf}{\text{Arf}}
+\newcommand{\Spin}{\text{Spin}}
+\newcommand{\sgn}{{\rm sgn}}
+\newcommand{\Li}{{\rm Li}}
+\newcommand{\quat}{\mathbb{Q}_8}
+
+\newcommand{\wh}{\widehat}
+\newcommand{\p}{\partial}
+\newcommand{\pz}{\partial_z}
+\newcommand{\pbz}{\partial_{\bar z}}
+\newcommand{\pb}{\bar{\partial}}
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+\newcommand{\ad}{\text{Ad}}
+\newcommand{\unit}{\mathbf{1}}
+\newcommand{\fred}{\frac{F}{2\pi}}
+\newcommand{\bp}{\bar\psi}
+\newcommand{\gf}{\bar\gamma} 
+\newcommand{\ga}{{\gamma}}
+\newcommand{\gp}{{\gamma'}}
+\newcommand{\gpp}{{\gamma''}}
+\newcommand{\La}{\Lambda}
+\newcommand{\la}{\lambda}
+\newcommand{\ist}{{i^*}}
+\newcommand{\jst}{{j^*}}
+\newcommand{\da}{{\dagger}}
+\newcommand{\doa}{\downarrow}
+\newcommand{\upa}{\uparrow}
+\newcommand{\ob}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\tmn}{{T_{\mu\nu}}}
+\newcommand{\gmn}{{g_{\mu\nu}}}
+\newcommand{\emn}{\eta_{\mu\nu}}
+\newcommand{\bz}{{\bar z}}
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\lra}{\leftrightarrow}
+\newcommand{\on}{^{(1)}}
+\newcommand{\mon}{^{(-1)}}
+\newcommand{\wt}{\widetilde}
+
+\newcommand{\xrai}{\xrightarrow{i}}
+\newcommand{\xrapi}{\xrightarrow{\pi}}
+\newcommand{\xrap}{\xrightarrow{\partial}}
+\newcommand{\xeq}[1]{\stackrel{#1}{=}}
+
+\newcommand{\uva}{{\mathbf{\hat a}}}
+\newcommand{\uvb}{{\mathbf{\hat b}}}
+\newcommand{\uvc}{{\mathbf{\hat c}}}
+\newcommand{\uvi}{{\mathbf{\hat i}}}
+\newcommand{\uvj}{{\mathbf{\hat j}}}
+\newcommand{\uvk}{{\mathbf{\hat k}}}
+\newcommand{\uvl}{{\mathbf{\hat l}}}
+\newcommand{\uvx}{{\mathbf{\hat x}}}
+\newcommand{\uvy}{{\mathbf{\hat y}}}
+\newcommand{\uvz}{{\mathbf{\hat z}}}
+\newcommand{\uvth}{{\boldsymbol{\hat\theta}}}
+\newcommand{\bfzero}{{\mathbf{0}}}
+
+\newcommand{\nrt}{{\zeta_N}} %
+
+\newcommand{\kg}{\text{kg}}
+\newcommand{\meter}{\text{m}}
+\newcommand{\second}{\text{s}}
+\newcommand{\joule}{\text{J}}
+\newcommand{\ev}{\text{eV}}
+
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+\newcommand{\mt}{\mapsto}
+\newcommand{\xra}{\xrightarrow}
+\newcommand{\tp}{\otimes}
+
+\newcommand{\vol}{\text{vol}\, }
+\newcommand{\dk}{\frac{dk}{2\pi}\,}
+\newcommand{\ddk}{\frac{d^dk}{(2\pi)^d}\,}
+\newcommand{\twp}{{2\pi}}
+\newcommand{\fpi}{{4\pi}}
+\newcommand{\slp}{\slashed{p}}
+\newcommand{\slq}{\slashed{q}}
+\newcommand{\slk}{\slashed{k}}
+\newcommand{\sld}{\slashed{D}}
+\newcommand{\slA}{\slashed{A}}
+\newcommand{\D}{\nabla}
+\newcommand{\DE}{\nabla^E}
+
+\newcommand\bpm            {\begin{pmatrix}}
+	\newcommand\epm           {\end{pmatrix}}
+
+\newcommand{\ms}{\medskip}
+\newcommand{\bs}{\bigskip}
+
+\def\app#1#2{%
+	\mathrel{%
+		\setbox0=\hbox{$#1\sim$}%
+		\setbox2=\hbox{%
+			\rlap{\hbox{$#1\propto$}}%
+			\lower1.1\ht0\box0%
+		}%
+		\raise0.25\ht2\box2%
+	}%
+}
+\def\approxprop{\mathpalette\app\relax}
+
+\newcommand{\slpar}{\slashed{\partial}}
+\newcommand{\sla}{\slashed{A}}
+\newcommand{\bcs}{\text{boundary conditions }}
+\newcommand{\pcs}{$\partial$ conds}
+\newcommand{\spst}{\text{spin structure}}
+\newcommand{\gt}{\text{gauge transformation }}
+\newcommand{\spec}{\text{Spec}}
+\newcommand{\sym}{\text{symmetry }}
+\newcommand{\syms}{\text{symmetries }}
+\newcommand{\diffs}{\text{diffeomorphisms }}
+\newcommand{\wtf}{\text{Weyl transformation }}
+\newcommand{\ctfm}{\text{conformal transformation }}
+\newcommand{\tfm}{\text{transformation }}
+\newcommand{\tfms}{\text{transformations }}
+\newcommand{\ulmcc}{\underline{\mathcal{C}}}
+\newcommand{\sech}{{\rm sech}}
+\newcommand{\csch}{{\rm csch}}
+\newcommand{\const}{\text{const.}}
+\newcommand{\opi}{\text{1PI}}
+\newcommand{\tw}{\textwidth}
+
+\newcommand{\sqrttp}{\sqrt{2\pi}}
+\newcommand{\sqrtfp}{\sqrt{4\pi}}
+\newcommand{\dtk}{\frac{d^2k}{(2\pi)^2}\,}
+\newcommand{\dtq}{\frac{d^2q}{(2\pi)^2}\,}
+\newcommand{\br}{\begin{center} $\diamond\,\diamond\,\diamond$ \end{center}}
+\newcommand{\vp}{\varphi}
+\newcommand{\vt}{\vartheta}
+\newcommand{\ct}{\Theta}
+\newcommand{\vs}{\varsigma} 
+\newcommand{\lr}{{L/R}}
+\newcommand{\rl}{{R/L}}
+\newcommand{\qc}{\mathcal{Q}\mathcal{C}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\eom}{\stackrel{{\rm eom}}{=}}
+\newcommand{\ope}\odot
+
+\newcommand{\sqig}{\rightsquigarrow}
+
+\usepackage{manfnt}
+\newcommand*\cube{{\, \mbox{\mancube} \, }}
+
+% \renewcommand{\prl}{{\, \parallel \,}}
+\newcommand{\bi}{\begin{itemize}}
+	\newcommand{\ei}{\end{itemize}}
+
+\newcommand{\cbox}[1]{\vcenter{\hbox{#1}}} %
+\newcommand{\ig}[1]{\includegraphics[width=.8\textwidth]{#1}}
+\newcommand{\igf}[1]{\includegraphics[width=1\textwidth]{#1}}
+\newcommand{\igpf}[1]{\includegraphics[width=.5\textwidth]{#1}}
+\newcommand{\igpfo}[1]{\includegraphics[width=.45\textwidth]{#1}}
+\newcommand{\igc}[1]{\vcenter{\hbox{\includegraphics[width=.8\textwidth]{#1}}}}
+\newcommand{\igfc}[1]{\vcenter{\hbox{\includegraphics[width=1\textwidth]{#1}}}}
+\newcommand{\igpfc}[1]{\vcenter{\hbox{\includegraphics[width=.5\textwidth]{#1}}}}
+\newcommand{\igptc}[1]{\vcenter{\hbox{\includegraphics[width=.3\textwidth]{#1}}}}
+\newcommand{\igptfc}[1]{\vcenter{\hbox{\includegraphics[width=.35\textwidth]{#1}}}}
+\newcommand{\igptwoc}[1]{\vcenter{\hbox{\includegraphics[width=.2\textwidth]{#1}}}}
+\newcommand{\igpfoc}[1]{\vcenter{\hbox{\includegraphics[width=.45\textwidth]{#1}}}}
+\newcommand{\igcs}[1]{\vcenter{\hbox{\includegraphics[width=.28\textwidth]{#1}}}}
+
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{fact}{Fact}
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+% \newtheorem{definition}{Definition}
+% \newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newcommand\bpro		  {\begin{proposition}}
+	\newcommand\epro 		  {\end{proposition}}
+\newcommand\bproof			  {\begin{proof}}
+	\newcommand\eproof 		  {\end{proof}}
+
+\newcommand\ed            {\end{definition}}
+
+\newcommand\be            {\begin{equation}}
+\newcommand\ee            {\end{equation}}
+\newcommand\ba            {\begin{aligned}}
+\newcommand\ea            {\end{aligned}}
+\newcommand\bea{\begin{equation}\begin{aligned}}
+	\newcommand\eea{\end{aligned}\end{equation}}
+\usepackage{xcolor}
+
+
+\usepackage{hyperref} 
+\hypersetup{final}
+\definecolor{darkblue} {rgb}{.1,.5,0.65}
+\definecolor{darkgreen}{rgb}{.1,.18,.82}
+\hypersetup{colorlinks,
+	urlcolor   = blue,         
+	linkcolor  = darkgreen,     
+	citecolor  = darkblue,    
+}
+\newcommand{\sss}{\subsubsection}
+\renewcommand{\ss}{\subsection}
+
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\renewcommand{\d}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\newcommand{\s}{\sigma}
+\renewcommand{\S}{\Sigma} 
+\newcommand{\e}{\varepsilon}
+\newcommand{\ep}{\varepsilon} %
+\renewcommand{\l}{\lambda}
+\renewcommand{\L}{\Lambda}
+\renewcommand{\t}{\theta}
+\newcommand{\T}{\Theta}
+\renewcommand{\o}{\omega}
+\renewcommand{\O}{\Omega} 
+\newcommand{\m}{\mu}
+\newcommand{\n}{\nu}
+\renewcommand{\r}{\rho}
+\renewcommand{\u}{\upsilon}
+\newcommand{\U}{\Upsilon}
+\renewcommand{\c}{\chi}
+\newcommand{\z}{\zeta}
+
+\newcommand{\bfphi}{{\boldsymbol{\phi}}}
+\newcommand{\bfsig}{{\boldsymbol{\sigma}}}
+\newcommand{\bfpi}{{\boldsymbol{\pi}}}
+\newcommand{\bfmu}{{\boldsymbol{\mu}}}
+\newcommand{\bfnu}{{\boldsymbol{\nu}}}
+\newcommand{\bfal}{{\boldsymbol{\alpha}}}
+\newcommand{\bfbe}{{\boldsymbol{\beta}}}
+\newcommand{\bfep}{{\boldsymbol{\epsilon}}}
+\newcommand{\bfga}{{\boldsymbol{\gamma}}}
+\newcommand{\bfl}{{\boldsymbol{\lambda}}}
+\newcommand{\bfka}{{\boldsymbol{\kappa}}}
+\newcommand{\bfvp}{{\boldsymbol{\varphi}}}
+\newcommand{\bfth}{{\boldsymbol{\theta}}}
+\newcommand{\bfvt}{\boldsymbol{\vartheta}}
+\newcommand{\bfdel}{{\boldsymbol{\delta}}}
+\newcommand{\bfel}{{\boldsymbol{\ell}}}
+\newcommand{\bfeta}{{\boldsymbol{\eta}}}
+
+
+\newcommand{\mfso}{\mathfrak{so}}
+\newcommand{\mfsu}{\mathfrak{su}}
+\newcommand{\mfsp}{\mathfrak{sp}}
+\newcommand{\mfa}{\mathfrak{a}}
+\newcommand{\mfb}{\mathfrak{b}}
+\newcommand{\mfc}{\mathfrak{c}}
+\newcommand{\mfd}{\mathfrak{d}}
+\newcommand{\mfe}{\mathfrak{e}}
+\newcommand{\mff}{\mathfrak{f}}
+\newcommand{\mfg}{\mathfrak{g}}
+\newcommand{\mfh}{\mathfrak{h}}
+\newcommand{\mfi}{\mathfrak{i}}
+\newcommand{\mfj}{\mathfrak{j}}
+\newcommand{\mfk}{\mathfrak{k}}
+\newcommand{\mfl}{\mathfrak{l}}  
+\newcommand{\mfm}{\mathfrak{m}}
+\newcommand{\mfn}{\mathfrak{n}}
+\newcommand{\mfo}{\mathfrak{o}}
+\newcommand{\mfp}{\mathfrak{p}}
+\newcommand{\mfq}{\mathfrak{q}}
+\newcommand{\mfr}{\mathfrak{r}}
+\newcommand{\mfs}{\mathfrak{s}}
+\newcommand{\mft}{\mathfrak{t}}
+\newcommand{\mfu}{\mathfrak{u}}
+\newcommand{\mfv}{\mathfrak{v}}
+\newcommand{\mfw}{\mathfrak{w}}
+\newcommand{\mfx}{\mathfrak{x}}
+\newcommand{\mfz}{\mathfrak{z}}
+\newcommand{\mfy}{\mathfrak{y}}
+
+\newcommand{\bfA}{\mathbf{A}}
+\newcommand{\bfB}{\mathbf{B}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfD}{\mathbf{D}}
+\newcommand{\bfE}{\mathbf{E}}
+\newcommand{\bfF}{\mathbf{F}}
+\newcommand{\bfG}{\mathbf{G}}
+\newcommand{\bfH}{\mathbf{H}}
+\newcommand{\bfI}{\mathbf{I}}
+\newcommand{\bfJ}{\mathbf{J}}
+\newcommand{\bfK}{\mathbf{K}}
+\newcommand{\bfL}{\mathbf{L}}
+\newcommand{\bfM}{\mathbf{M}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfO}{\mathbf{O}}
+\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfS}{\mathbf{S}}
+\newcommand{\bfT}{\mathbf{T}}
+\newcommand{\bfU}{\mathbf{U}}
+\newcommand{\bfV}{\mathbf{V}}
+\newcommand{\bfW}{\mathbf{W}}
+\newcommand{\bfX}{\mathbf{X}}
+\newcommand{\bfY}{\mathbf{Y}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfd}{\mathbf{d}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bfg}{\mathbf{g}}
+\newcommand{\bfh}{\mathbf{h}}
+\newcommand{\bfi}{\mathbf{i}}
+\newcommand{\bfj}{\mathbf{j}}
+\newcommand{\bfk}{\mathbf{k}}
+\newcommand{\bfll}{\mathbf{l}} %
+\newcommand{\bfm}{\mathbf{m}}
+\newcommand{\bfn}{\mathbf{n}}
+\newcommand{\bfo}{\mathbf{o}}
+\newcommand{\bfp}{\mathbf{p}}
+\newcommand{\bfq}{\mathbf{q}}
+\newcommand{\bfr}{\mathbf{r}}
+\newcommand{\bfs}{\mathbf{s}}
+\newcommand{\bft}{\mathbf{t}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfz}{\mathbf{z}}
+\newcommand{\bfy}{\mathbf{y}}
+
+\newcommand{\zt}{\mathbb{Z}_2}
+\newcommand{\zn}{\mathbb{Z}_N}
+\newcommand{\zno}{\mathbb{Z}_N^{(1)}}
+\newcommand{\zpo}{\mathbb{Z}_p^{(1)}}
+\newcommand{\zqo}{\mathbb{Z}_q^{(1)}}
+\newcommand{\zlo}{\mathbb{Z}_l^{(1)}}
+\newcommand{\bzz}{\overline{\mathbb{Z}}}
+\renewcommand{\aa}{\mathbb{A}}
+\newcommand{\bb}{\mathbb{B}}
+\newcommand{\cc}{\mathbb{C}}
+\newcommand{\dd}{\mathbb{D}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\ff}{\mathbb{F}}
+\newcommand{\GG}{\mathbb{G}} %
+\newcommand{\hh}{\mathbb{H}}
+\newcommand{\ii}{\mathbb{I}}
+\newcommand{\jj}{\mathbb{J}}
+\newcommand{\kk}{\mathbb{K}}
+\newcommand{\LL}{\mathbb{L}} %
+\newcommand{\mm}{\mathbb{M}}
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\oo}{\mathbb{O}}
+\newcommand{\pp}{\mathbb{P}}
+\newcommand{\rr}{\mathbb{R}}
+\renewcommand{\SS}{\mathbb{S}} %
+\newcommand{\qq}{\qquad} 
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\uu}{\mathbb{U}}
+\newcommand{\vv}{\mathbb{V}}
+\newcommand{\ww}{\mathbb{W}}
+\newcommand{\xx}{\mathbb{X}}
+\newcommand{\yy}{\mathbb{Y}}
+\newcommand{\zz}{\mathbb{Z}}
+
+\newcommand{\mcc}{\mathcal{C}}
+\newcommand{\mck}{\mathcal{K}}
+\newcommand{\mcb}{\mathcal{B}}
+\newcommand{\mcf}{\mathcal{F}}
+\newcommand{\mco}{\mathcal{O}}
+\newcommand{\mcu}{\mathcal{U}}
+\newcommand{\mce}{\mathcal{E}}
+\newcommand{\mcj}{\mathcal{J}}
+\newcommand{\mcd}{\mathcal{D}}
+\newcommand{\mcl}{\mathcal{L}}
+\newcommand{\mcg}{\mathcal{G}}
+\newcommand{\mcs}{\mathcal{S}}
+\newcommand{\mct}{\mathcal{T}}
+\newcommand{\mch}{\mathcal{H}}
+\newcommand{\mca}{\mathcal{A}}
+\newcommand{\mcp}{\mathcal{P}}
+\newcommand{\mcx}{\mathcal{X}}
+\newcommand{\mcz}{\mathcal{Z}}
+\newcommand{\mcm}{\mathcal{M}}
+\newcommand{\mcn}{\mathcal{N}}
+\newcommand{\mcv}{\mathcal{V}}
+\newcommand{\mcw}{\mathcal{W}}
+\newcommand{\mci}{\mathcal{I}}
+\newcommand{\mcr}{\mathcal{R}}
+\newcommand{\mcq}{\mathcal{Q}}
+
+\newcommand{\sfA}{\mathsf{A}}
+\newcommand{\sfB}{\mathsf{B}}
+\newcommand{\sfC}{\mathsf{C}}
+\newcommand{\sfD}{\mathsf{D}}
+\newcommand{\sfE}{\mathsf{E}}
+\newcommand{\sfF}{\mathsf{F}}
+\newcommand{\sfG}{\mathsf{G}}
+\newcommand{\sfH}{\mathsf{H}}
+\newcommand{\sfI}{\mathsf{I}}
+\newcommand{\sfJ}{\mathsf{J}}
+\newcommand{\sfK}{\mathsf{K}}
+\newcommand{\sfL}{\mathsf{L}}
+\newcommand{\sfM}{\mathsf{M}}
+\newcommand{\sfN}{\mathsf{N}}
+\newcommand{\sfO}{\mathsf{O}}
+\newcommand{\sfP}{\mathsf{P}}
+\newcommand{\sfQ}{\mathsf{Q}}
+\newcommand{\sfR}{\mathsf{R}}
+\newcommand{\sfS}{\mathsf{S}} %
+\newcommand{\sfT}{\mathsf{T}}
+\newcommand{\sfU}{\mathsf{U}}
+\newcommand{\sfV}{\mathsf{V}}
+\newcommand{\sfW}{\mathsf{W}}
+\newcommand{\sfX}{\mathsf{X}}
+\newcommand{\sfY}{\mathsf{Y}}
+\newcommand{\sfZ}{\mathsf{Z}}
+
+\newcommand{\sfa}{\mathsf{a}}
+\newcommand{\sfb}{\mathsf{b}}
+\newcommand{\sfc}{\mathsf{c}}
+\newcommand{\sfd}{\mathsf{d}}
+\newcommand{\sfe}{\mathsf{e}}
+\newcommand{\sff}{\mathsf{f}}
+\newcommand{\sfg}{\mathsf{g}}
+\newcommand{\sfh}{\mathsf{h}}
+\newcommand{\sfi}{\mathsf{i}}
+\newcommand{\sfj}{\mathsf{j}}
+\newcommand{\sfk}{\mathsf{k}}
+\newcommand{\sfl}{\mathsf{l}}
+\newcommand{\sfm}{\mathsf{m}}
+\newcommand{\sfn}{\mathsf{n}}
+\newcommand{\sfo}{\mathsf{o}}
+\newcommand{\sfp}{\mathsf{p}}
+\newcommand{\sfq}{\mathsf{q}}
+\newcommand{\sfr}{\mathsf{r}}
+\newcommand{\sfs}{\mathsf{s}} 
+\newcommand{\sft}{\mathsf{t}}
+\newcommand{\sfu}{\mathsf{u}}
+\newcommand{\sfv}{\mathsf{v}}
+\newcommand{\sfw}{\mathsf{w}}
+\newcommand{\sfx}{\mathsf{x}}
+\newcommand{\sfy}{\mathsf{y}}
+\newcommand{\sfz}{\mathsf{z}}
+
+\usepackage[mathscr]{eucal} %
+\newcommand{\sca}{\mathscr{A}}
+\newcommand{\scb}{\mathscr{B}}
+\newcommand{\scc}{\mathscr{C}}
+\newcommand{\scd}{\mathscr{D}}
+\newcommand{\sce}{\mathscr{E}}
+\newcommand{\scf}{\mathscr{F}}
+\newcommand{\scg}{\mathscr{G}}
+\newcommand{\sch}{\mathscr{H}}
+\newcommand{\sci}{\mathscr{I}}
+\newcommand{\scj}{\mathscr{J}}
+\newcommand{\sck}{\mathscr{K}}
+\newcommand{\scl}{\mathscr{L}}
+\newcommand{\scm}{\mathscr{M}}
+\newcommand{\scn}{\mathscr{N}}
+\newcommand{\sco}{\mathscr{O}}
+\newcommand{\scp}{\mathscr{P}}
+\newcommand{\scq}{\mathscr{Q}}
+\newcommand{\scr}{\mathscr{R}}
+\newcommand{\scs}{\mathscr{S}} 
+\newcommand{\sct}{\mathscr{T}}
+\newcommand{\scu}{\mathscr{U}}
+\newcommand{\scv}{\mathscr{V}}
+\newcommand{\scw}{\mathscr{W}}
+\newcommand{\scx}{\mathscr{X}}
+\newcommand{\scy}{\mathscr{Y}}
+\newcommand{\scz}{\mathscr{Z}}
+
+\newcommand{\tta}{\mathtt{a}}
+\newcommand{\ttb}{\mathtt{b}}
+\newcommand{\ttc}{\mathtt{c}}
+\newcommand{\ttd}{\mathtt{d}}
+\newcommand{\tte}{\mathtt{e}}
+\newcommand{\ttf}{\mathtt{f}}
+\newcommand{\ttg}{\mathtt{g}}
+\newcommand{\tth}{\mathtt{h}}
+\newcommand{\tti}{\mathtt{i}}
+\newcommand{\ttj}{\mathtt{j}}
+\newcommand{\ttk}{\mathtt{k}}
+\newcommand{\ttl}{\mathtt{l}}
+\newcommand{\ttm}{\mathtt{m}}
+\newcommand{\ttn}{\mathtt{n}}
+\newcommand{\tto}{\mathtt{o}}
+\newcommand{\ttp}{\mathtt{p}}
+\newcommand{\ttq}{\mathtt{q}}
+\newcommand{\ttr}{\mathtt{r}}
+\newcommand{\tts}{\mathtt{s}} 
+\newcommand{\ttt}{\mathtt{t}}
+\newcommand{\ttu}{\mathtt{u}}
+\newcommand{\ttv}{\mathtt{v}}
+\newcommand{\ttw}{\mathtt{w}}
+\newcommand{\ttx}{\mathtt{x}}
+\newcommand{\tty}{\mathtt{y}}
+\newcommand{\ttz}{\mathtt{z}}
+\renewcommand{\tt}[1]{\mathtt{#1}}
+\renewcommand{\ttt}[1]{\texttt{#1}} 
+\newcommand{\sq}{\square}
+
+\newcommand{\tA}{\widetilde{A}}
+\newcommand{\tZ}{\widetilde{Z}}
+\newcommand{\tX}{\widetilde{X}}
+
+\newcommand{\mytitle}[1]{\title{\textsf{\underline{ #1 }}}}
+
+\newcommand{\kb}[2]{|{#1}\rangle\langle{#2}|}
+\renewcommand{\k}[1]{|#1\rangle}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\proj}[1]{|#1\rangle\langle#1|}
+\newcommand{\bra}[1]{{\langle #1}|}
+
+\usepackage{dcolumn}
+
+\usepackage{pifont}
+\usepackage[normalem]{ulem}
+\newcommand{\rcmark}{{\color{red}{\cmark}}}
+\newcommand{\rxmark}{{\color{red}{\xmark}}}
+\renewcommand{\rq}{{\color{red}{\mcq}}}
+
+\newcommand{\add}[1]{{\color{red} #1}}
+
+\usepackage[caption=false]{subfig}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\usepackage{physics}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{bm}
+\renewcommand{\bot}{\bigotimes} 
+\renewcommand\qq{\qquad}
+\renewcommand\cp{\Phi}
+\renewcommand{\la}{\leftarrow} 
+\renewcommand{\bot}{\bigotimes} 
+\newcommand{\oEE}{\mathop{\mathbb{E}}}
+\newcommand{\ethan}[1]{ { \color{blue} \footnotesize \textsf{ethan: \textsl{#1}} }}
+\newcommand{\sr}[1]{ { \color{red} \footnotesize \textsf{sunghan: \textsl{#1}} }}
+\newcommand{\epi}[1]{{\color{red}\footnotesize\textsf{\textsl{#1}}}}
+\renewcommand{\sfh}{t_{\rm th}}
+\newcommand{\trel}{t_{\rm rel}}
+\newcommand{\tmem}{t_{\rm mem}}
+\newcommand{\poly}{{\rm poly}}
+\newcommand{\maj}{{\sf maj}}
+\newcommand{\dam}{{\sf dam}}
+\usepackage{seqsplit}
+\usepackage{array}
+\newcommand{\plog}{{p_{\sf log}}} 
+
+\newcommand{\algorule}{\par\noindent\rule{\linewidth}{0.4pt}\par}
+
